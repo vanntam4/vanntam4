@@ -1,0 +1,12 @@
+gg.setRanges(gg.REGION_CODE_APP)
+gg.searchNumber("0.0001F;1000.0F;-1.30930378e25F;-1.30683878e21F;-3.69655493e20F;-3.69511342e20F;-3.92915649e21F;6.16297729e-33F;-8.81755448e22F;-8.82124743e22F;-3.86856677e25F", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.refineNumber("0.0001", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+TamOs = gg.getResults(3)
+gg.clearResults()
+time = gg.getRangesList("libil2cpp.so")[1].start
+tampx = TamOs[1].address - time - 0
+TamPx = string.format("%X", tampx)
+gg.alert("lib: il2cpp.so\nOffset : 0x" .. TamPx)
+gg.copyText("0x"..TamPx)
+gg.toast("Đã Copy Offset")
+os.exit()
