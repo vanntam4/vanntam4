@@ -1,0 +1,20 @@
+----Tam Px
+-- Underground
+--Value (Flags: Type Float) 16
+-- Replace: -0.8
+-- Original: 0.0001
+-- Hex (Flags: Type Float) 16
+-- Replace: h CD CC 4C BF
+-- Original: h 17 B7 D1 38
+-- ON
+--Nếu Replace Là Value Float Thì Ghi: -0.8 và 0.0001
+--Nếu Replace Là Hex Thì Ghi: "h CD CC 4C BF" và "h 17 B7 D1 38"
+function TamOs(address,flags,value) 
+local TamPx={} TamPx[1]={} TamPx[1].address=address TamPx[1].flags=flags TamPx[1].value=value 
+gg.setValues(TamPx)
+end
+Tam = gg.getRangesList('libil2cpp.so')[1].start
+TamOs (Tam + Hex Underground ,16, Replace) 
+gg.sleep(1000)
+TamOs (Tam + Hex Underground ,16, Original)
+gg.toast("Underground")
